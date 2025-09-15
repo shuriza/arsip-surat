@@ -1,9 +1,14 @@
-git clone https://github.com/shuriza/arsip-surat.git
-git clone https://github.com/shuriza/arsip-surat.git
+<div align="center">
 
 # 📄 Arsip Surat
 
-Aplikasi web sederhana untuk mengarsipkan dan mengelola surat resmi di lingkungan desa.
+**Aplikasi web sederhana untuk mengarsipkan dan mengelola surat resmi di lingkungan desa**
+
+![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=flat-square&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat-square&logo=php)
+![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat-square&logo=mysql)
+
+</div>
 
 ---
 
@@ -11,66 +16,102 @@ Aplikasi web sederhana untuk mengarsipkan dan mengelola surat resmi di lingkunga
 
 Membantu digitalisasi dokumen surat agar lebih mudah dicari, aman, dan efisien dalam pengelolaan arsip kantor desa.
 
-## ✨ Fitur
+## ✨ Fitur Utama
 
-- Upload & manajemen surat (PDF, max 10MB)
-- Pencarian surat secara real-time
-- Preview & download PDF langsung di aplikasi
-- CRUD kategori surat
-- Validasi & keamanan upload
-- Tampilan responsive (desktop & mobile)
+- 📤 **Upload & manajemen surat** (PDF, max 10MB)
+- 🔍 **Pencarian surat** secara real-time
+- 👁️ **Preview & download PDF** langsung di aplikasi  
+- 🗂️ **CRUD kategori surat** dengan mudah
+- 🔒 **Validasi & keamanan upload** file
+- 📱 **Tampilan responsive** (desktop & mobile)
 
-## � Cara Menjalankan
+## 🚀 Cara Menjalankan
+
+### 📋 **Langkah Instalasi**
 
 1. **Clone repository**
-	```bash
-	git clone https://github.com/shuriza/arsip-surat.git
-	cd arsip-surat
-	```
+   ```bash
+   git clone https://github.com/shuriza/arsip-surat.git
+   cd arsip-surat
+   ```
+
 2. **Install dependencies**
-	```bash
-	composer install
-	```
-3. **Copy file environment & generate key**
-	```bash
-	cp .env.example .env
-	php artisan key:generate
-	```
-4. **Atur database di file .env**
+   ```bash
+   composer install
+   ```
+
+3. **Setup environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Konfigurasi database**
+   > Edit file `.env` dan sesuaikan pengaturan database Anda
+
 5. **Migrasi & seed database**
-	```bash
-	php artisan migrate
-	php artisan db:seed
-	```
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+
 6. **Buat storage link**
-	```bash
-	php artisan storage:link
-	```
-7. **Jalankan server**
-	```bash
-	php artisan serve
-	```
+   ```bash
+   php artisan storage:link
+   ```
+
+7. **Jalankan aplikasi**
+   ```bash
+   php artisan serve
+   ```
+   > Akses aplikasi di: http://localhost:8000
 
 ---
 
-## �️ Screenshot
+## 🖼️ Preview Aplikasi
 
-### Dashboard
+### 🏠 Dashboard
+*Halaman utama dengan daftar arsip dan fitur pencarian*
+
 ![Dashboard](public/images/image.png)
 
-### Upload Surat
+### 📤 Upload Surat  
+*Form upload dokumen dengan validasi lengkap*
+
 ![Upload](public/images/unggah.png)
 
-### Preview Surat
+### 👁️ Preview Surat
+*Preview PDF dengan opsi download*
+
 ![Preview](public/images/lihat.png)
 
-### Edit Surat
+### ✏️ Edit Surat
+*Halaman edit untuk memperbarui data surat*
+
 ![Edit](public/images/edit.png)
 
-### Manajemen Kategori
+### 🗂️ Manajemen Kategori
+*CRUD kategori untuk mengorganisir surat*
+
 ![Kategori](public/images/kategori.png)
+
+**Tambah Kategori**
 ![Tambah Kategori](public/images/tambahkategori.png)
+
+**Edit Kategori**  
 ![Edit Kategori](public/images/editkategori.png)
 
-### Tentang
+### ℹ️ Halaman About
+*Informasi aplikasi dan pengembang*
+
 ![About](public/images/about.png)
+
+---
+
+<div align="center">
+
+**Dibuat dengan ❤️ menggunakan Laravel**
+
+[![GitHub](https://img.shields.io/badge/GitHub-shuriza-181717?style=flat-square&logo=github)](https://github.com/shuriza)
+
+</div>
