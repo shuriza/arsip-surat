@@ -4,9 +4,13 @@
 
 **Aplikasi web sederhana untuk mengarsipkan dan mengelola surat resmi di lingkungan desa**
 
-![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=flat-square&logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat-square&logo=php)
+![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat-square&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=flat-square&logo=php)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat-square&logo=mysql)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.1-7952B3?style=flat-square&logo=bootstrap)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-06B6D4?style=flat-square&logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-7.0-646CFF?style=flat-square&logo=vite)
+![SweetAlert2](https://img.shields.io/badge/SweetAlert2-11.x-FF6B6B?style=flat-square)
 
 </div>
 
