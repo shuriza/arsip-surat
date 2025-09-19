@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Arsip;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
@@ -24,14 +25,18 @@ class ArsipController extends Controller
 
     public function create()
     {
-        return view('arsip.create');
+        $categories = Category::orderBy('nama_kategori')->get();
+        return view('arsip.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
+        // Ambil semua nama kategori yang valid dari database
+        $validCategories = Category::pluck('nama_kategori')->toArray();
+        
         $request->validate([
             'nomor_surat' => 'required|unique:arsip,nomor_surat',
-            'kategori' => 'required|in:Undangan,Pengumuman,Nota Dinas,Pemberitahuan',
+            'kategori' => 'required|in:' . implode(',', $validCategories),
             'judul' => 'required',
             'file' => 'required|mimes:pdf|max:10240' // 10MB max
         ]);
@@ -60,16 +65,20 @@ class ArsipController extends Controller
     public function edit($id)
     {
         $arsip = Arsip::findOrFail($id);
-        return view('arsip.edit', compact('arsip'));
+        $categories = Category::orderBy('nama_kategori')->get();
+        return view('arsip.edit', compact('arsip', 'categories'));
     }
 
     public function update(Request $request, $id)
     {
         $arsip = Arsip::findOrFail($id);
         
+        // Ambil semua nama kategori yang valid dari database
+        $validCategories = Category::pluck('nama_kategori')->toArray();
+        
         $request->validate([
             'nomor_surat' => 'required|unique:arsip,nomor_surat,' . $id,
-            'kategori' => 'required|in:Undangan,Pengumuman,Nota Dinas,Pemberitahuan',
+            'kategori' => 'required|in:' . implode(',', $validCategories),
             'judul' => 'required',
             'file' => 'nullable|mimes:pdf|max:10240' // File optional untuk update
         ]);

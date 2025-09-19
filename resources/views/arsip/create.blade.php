@@ -39,10 +39,12 @@
             <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
             <div class="col-sm-4">
                 <select class="form-select @error('kategori') is-invalid @enderror" id="kategori" name="kategori" required>
-                    <option value="Undangan" {{ old('kategori') == 'Undangan' ? 'selected' : '' }}>Undangan</option>
-                    <option value="Pengumuman" {{ old('kategori') == 'Pengumuman' ? 'selected' : '' }}>Pengumuman</option>
-                    <option value="Nota Dinas" {{ old('kategori') == 'Nota Dinas' ? 'selected' : '' }}>Nota Dinas</option>
-                    <option value="Pemberitahuan" {{ old('kategori') == 'Pemberitahuan' ? 'selected' : '' }}>Pemberitahuan</option>
+                    <option value="">-- Pilih Kategori --</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->nama_kategori }}" {{ old('kategori') == $category->nama_kategori ? 'selected' : '' }}>
+                            {{ $category->nama_kategori }}
+                        </option>
+                    @endforeach
                 </select>
                 @error('kategori')
                     <div class="invalid-feedback">{{ $message }}</div>
